@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
       :root {
           --text-primary: #0c2c4d;
-          --background-primary: #edf0f5;
+          --background-primary: #DAC4DF;
       }
   
       * {
@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
   
       body {
           font-family: 'Noto Sans', sans-serif;
-          background-color: var(--background-primary)
+          background-color: var(--background-primary);
           color: var(--text-primary);
       }
   `;
