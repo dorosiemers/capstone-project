@@ -57,4 +57,6 @@ const Main = styled.main`
 const Container = styled.div`
   text-align: center;
   border: solid 1px;
+  padding: 10px;
+  margin: 10px;
 `;
