@@ -2,8 +2,8 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
       :root {
-          --text-primary: #0c2c4d;
-          --background-primary: #DAC4DF;
+          --text-primary: #F5F3F6;
+          --background-primary: #A18BA7;
       }
   
       * {

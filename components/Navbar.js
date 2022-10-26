@@ -1,10 +1,13 @@
 import Link from "next/link";
+import Image from "next/image";
 import styled from "styled-components";
 
 const Navbar = () => {
   return (
     <div>
-      <Logo>Navigation</Logo>
+      <Logo>
+        <Image alt="Logo" src="/logo.svg" width={500} height={400} />
+      </Logo>
       <Nav>
         <Link href="/">
           <LinkText>Home</LinkText>
@@ -35,8 +38,6 @@ const Nav = styled.nav`
 `;
 
 const Logo = styled.h1`
-  margin: 10px auto 80px;
-  padding: 10px 20px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
