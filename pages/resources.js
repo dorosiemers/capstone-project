@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Ressources = () => {
+const Resources = () => {
   return (
     <Container>
       <Headline>Hilfsangebote und Beratungsstellen</Headline>
@@ -15,7 +15,7 @@ const Ressources = () => {
   );
 };
 
-export default Contacts;
+export default Resources;
 
 const Container = styled.div`
   text-align: center;
