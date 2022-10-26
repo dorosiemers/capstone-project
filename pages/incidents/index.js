@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const IncidentForm = () => {
   return (
-    <Container>
+    <div>
       <Headline>Was ist passiert?</Headline>
       <Form>
         <label for="date">Wann?</label>
@@ -14,7 +14,7 @@ const IncidentForm = () => {
         <label for="incident">Was ist passiert?</label>
         <input type="text" id="incident" name="incident"></input>
       </Form>
-    </Container>
+    </div>
   );
 };
 
@@ -22,21 +22,20 @@ export default IncidentForm;
 
 const Container = styled.div`
   text-align: center;
-  border: solid 1px;
+  border: solid 1px #ddd;
   padding: 10px;
   margin: 10px;
 `;
 
 const Headline = styled.h1`
   text-align: center;
-  border: solid 1px;
   padding: 10px;
   margin: 10px;
 `;
 
-const Form = styled.main`
+const Form = styled.section`
   text-align: center;
-  border: solid 1px;
+  border: solid 1px #ddd;
   padding: 10px;
   margin: 10px;
 `;

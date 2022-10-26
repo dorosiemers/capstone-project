@@ -1,25 +1,47 @@
 import Link from "next/link";
+import styled from "styled-components";
 
 const Navbar = () => {
   return (
-    <nav>
-      <div>
-        <h1>Navigation</h1>
+    <div>
+      <Logo>Navigation</Logo>
+      <Nav>
         <Link href="/">
-          <a>Home</a>
+          <LinkText>Home</LinkText>
         </Link>
         <Link href="/incidents">
-          <a>Input</a>
+          <LinkText>Input</LinkText>
         </Link>
         <Link href="/incidents/incidentList">
-          <a>List</a>
+          <LinkText>List</LinkText>
         </Link>
         <Link href="/resources">
-          <a>Ressources</a>
+          <LinkText>Ressources</LinkText>
         </Link>
-      </div>
-    </nav>
+      </Nav>
+    </div>
   );
 };
 
 export default Navbar;
+
+const Nav = styled.nav`
+  margin: 10px auto 80px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  border-bottom: 1px solid #ddd;
+`;
+
+const Logo = styled.h1`
+  margin: 10px auto 80px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+`;
+
+const LinkText = styled.a`
+  margin-left: 12px;
+`;

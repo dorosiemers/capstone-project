@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Resources = () => {
   return (
-    <Container>
+    <div>
       <Headline>Hilfsangebote und Beratungsstellen</Headline>
       <List>
         <ListItem>Fachberatung1</ListItem>
@@ -11,7 +11,7 @@ const Resources = () => {
         <ListItem>Fachberatung4</ListItem>
         <ListItem>Fachberatung5</ListItem>
       </List>
-    </Container>
+    </div>
   );
 };
 
@@ -19,28 +19,26 @@ export default Resources;
 
 const Container = styled.div`
   text-align: center;
-  border: solid 1px;
+  border: solid 1px #ddd;
   padding: 10px;
   margin: 10px;
 `;
 
 const Headline = styled.h1`
   text-align: center;
-  border: solid 1px;
   padding: 10px;
   margin: 10px;
 `;
 
 const List = styled.ul`
   text-align: center;
-  border: solid 1px;
   padding: 10px;
   margin: 10px;
 `;
 
 const ListItem = styled.li`
   text-align: start;
-  border: solid 1px;
+  border: solid 1px #ddd;
   padding: 10px;
   margin: 10px;
   list-style: none;

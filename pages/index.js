@@ -24,7 +24,7 @@ export default function Home() {
         <link rel="logo" href="/favicon.ico" />
       </Head>
       <Main>
-        <Container>
+        <div>
           <h1>Tracker für Sexismus und Diskriminierung</h1>
           <Container>
             <h2>Was ist passiert?</h2>
@@ -45,7 +45,7 @@ export default function Home() {
               Angebote und Kontaktmöglichkeiten.
             </p>
           </Container>
-        </Container>
+        </div>
       </Main>
     </div>
   );
@@ -57,7 +57,7 @@ const Main = styled.main`
 
 const Container = styled.div`
   text-align: center;
-  border: solid 1px;
+  border: solid 1px #ddd;
   padding: 10px;
   margin: 10px;
 `;

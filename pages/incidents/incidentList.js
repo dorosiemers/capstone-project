@@ -19,28 +19,25 @@ export default incidentList;
 
 const Container = styled.div`
   text-align: center;
-  border: solid 1px;
   padding: 10px;
   margin: 10px;
 `;
 
 const Headline = styled.h1`
   text-align: center;
-  border: solid 1px;
   padding: 10px;
   margin: 10px;
 `;
 
 const List = styled.ul`
   text-align: center;
-  border: solid 1px;
   padding: 10px;
   margin: 10px;
 `;
 
 const ListItem = styled.li`
   text-align: start;
-  border: solid 1px;
+  border: solid 1px #ddd;
   padding: 10px;
   margin: 10px;
   list-style: none;
