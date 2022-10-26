@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Contacts = () => {
+const Ressources = () => {
   return (
     <Container>
       <Headline>Hilfsangebote und Beratungsstellen</Headline>
