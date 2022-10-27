@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 
@@ -62,6 +61,7 @@ export default function Home() {
 
 const Main = styled.main`
   text-align: center;
+  cursor: pointer;
 `;
 
 const Container = styled.div`
@@ -69,8 +69,10 @@ const Container = styled.div`
   border: solid 1px #ddd;
   padding: 10px;
   margin: 10px;
+  cursor: default;
 `;
 
 const Button = styled.button`
   color: #ddd;
+  cursor: pointer;
 `;

@@ -36,6 +36,7 @@ const Nav = styled.nav`
   justify-content: flex-end;
   align-items: flex-end;
   border-bottom: 1px solid #ddd;
+  cursor: pointer;
 `;
 
 const Logo = styled.h1`

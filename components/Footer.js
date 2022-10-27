@@ -20,6 +20,7 @@ const Foot = styled.div`
   justify-content: flex-end;
   align-items: flex-end;
   border-top: 1px solid #ddd;
+  cursor: default;
 `;
 
 const P1 = styled.p`
