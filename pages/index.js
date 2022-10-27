@@ -74,5 +74,7 @@ const Container = styled.div`
 
 const Button = styled.button`
   color: #ddd;
+  font-family: "Noto Sans", sans-serif;
+  color: #a18ba7;
   cursor: pointer;
 `;
