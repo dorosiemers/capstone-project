@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
+import LogoGraphic from "../public/images/logo.svg";
 
 const Navbar = () => {
   return (
     <div>
       <Logo>
-        <Image alt="Logo" src="/logo.svg" width={500} height={400} />
+        <Image alt="Logo" src={LogoGraphic} width={350} height={300} />
       </Logo>
       <Nav>
         <Link href="/">
@@ -35,6 +36,7 @@ const Nav = styled.nav`
   justify-content: flex-end;
   align-items: flex-end;
   border-bottom: 1px solid #ddd;
+  cursor: pointer;
 `;
 
 const Logo = styled.h1`

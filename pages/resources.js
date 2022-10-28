@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Resources = () => {
   return (
     <div>
-      <Headline>Hilfsangebote und Beratungsstellen</Headline>
+      <Headline>Hilfestellen und Beratungsangebote</Headline>
       <List>
         <ListItem>Fachberatung1</ListItem>
         <ListItem>Fachberatung2</ListItem>
