@@ -20,7 +20,7 @@ const Navbar = () => {
           <LinkText>List</LinkText>
         </Link>
         <Link href="/resources">
-          <LinkText>Ressources</LinkText>
+          <LinkText>Resources</LinkText>
         </Link>
       </Nav>
     </div>
@@ -39,7 +39,7 @@ const Nav = styled.nav`
   cursor: pointer;
 `;
 
-const Logo = styled.h1`
+const Logo = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
