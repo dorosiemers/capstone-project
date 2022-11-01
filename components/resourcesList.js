@@ -5,11 +5,15 @@ import styled from "styled-components";
 
 export default function ResourcesList({ item }) {
   return (
-    <>
-      <h3>{item.name}</h3>
-      <Link href={item.link}>Homepage</Link>
-      <Link href={item.tel}>Telefonnummer</Link>
-    </>
+    <div>
+      <Headline>{item.name}</Headline>
+      <Link href={item.link}>
+        <LinkStyle target="_blank">Homepage</LinkStyle>
+      </Link>
+      <Link href="tel:{item.tel}">
+        <LinkStyle>Telefonnummer</LinkStyle>
+      </Link>
+    </div>
   );
 }
 
@@ -18,7 +22,9 @@ const Headline = styled.h3`
   margin: 10px;
 `;
 
-const Links = styled.link`
+const LinkStyle = styled.a`
   text-decoration: none;
   color: #3d2443;
+  padding: 10px;
+  margin: 10px;
 `;
