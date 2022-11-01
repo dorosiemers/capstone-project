@@ -1,12 +1,20 @@
 import Link from "next/link";
-import { useState } from "react";
 import styled from "styled-components";
+import { resourcesList } from "../data/resourcesList";
+import ResourcesList from "../components/resourcesList";
 
 const Resources = () => {
+  const resources = resourcesList;
+  console.log(resources);
   return (
     <div>
       <Headline>Hilfestellen und Beratungsangebote</Headline>
-      <List>
+      <div>
+        {resources.map((item) => (
+          <ResourcesList key={item.id} item={item} />
+        ))}
+      </div>
+      {/* <List>
         <ListItem>
           <h3>bff: Gewalt gegen Frauen e.V.</h3>
           <Link href="https://www.frauen-gegen-gewalt.de" passHref>
@@ -155,7 +163,7 @@ const Resources = () => {
             Frauenzentren Thüringen
           </Link>
         </ListItem>
-      </List>
+      </List> */}
     </div>
   );
 };
