@@ -1,4 +1,5 @@
 import Link from "next/link";
+import styled from "styled-components";
 
 const NotFound = () => {
   return (
@@ -16,3 +17,11 @@ const NotFound = () => {
 };
 
 export default NotFound;
+
+const Container = styled.div`
+  text-align: center;
+  border: solid 1px #ddd;
+  padding: 10px;
+  margin: 10px;
+  cursor: default;
+`;
