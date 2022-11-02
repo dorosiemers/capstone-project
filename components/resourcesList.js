@@ -4,27 +4,21 @@ import Link from "next/link";
 import styled from "styled-components";
 
 export default function ResourcesList({ item }) {
+  const telefonnummer = "tel:" + item.tel;
   return (
     <div>
       <Headline>{item.name}</Headline>
-      <Link href={item.link}>
-        <LinkStyle target="_blank">Homepage</LinkStyle>
+      <Link target="_blank" href={item.link}>
+        <a>Homepage</a>
       </Link>
-      <Link href="tel:{item.tel}">
-        <LinkStyle>Telefonnummer</LinkStyle>
+      <Link href={telefonnummer}>
+        <a>Telefonnummer</a>
       </Link>
     </div>
   );
 }
 
 const Headline = styled.h3`
-  padding: 10px;
-  margin: 10px;
-`;
-
-const LinkStyle = styled.a`
-  text-decoration: none;
-  color: #3d2443;
   padding: 10px;
   margin: 10px;
 `;
