@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
 
       a {
         text-decoration: none;
-        color: #3d2443;
+        
       }
   `;
 
