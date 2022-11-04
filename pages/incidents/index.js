@@ -6,7 +6,6 @@ import { useIncidents } from "../../context/listContext";
 function IncidentPage() {
   const incidents = useIncidents().incidents;
   const setIncidents = useIncidents().setIncidents;
-  console.log(incidents);
   function appendListEntry(time, location, offender, incident) {
     setIncidents((listEntry) => [
       ...listEntry,
@@ -15,7 +14,7 @@ function IncidentPage() {
         location,
         offender,
         incident,
-        id: Math.random().toString().substring(),
+        id: Math.random().toString(),
       },
     ]);
   }

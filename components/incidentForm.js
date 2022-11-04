@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useRouter } from "next/router";
+import { useState } from "react";
 
 function IncidentForm({ appendListEntry }) {
   function sendForm(event) {
@@ -9,6 +11,14 @@ function IncidentForm({ appendListEntry }) {
 
     appendListEntry(time, location, offender, incident);
   }
+
+  const router = useRouter();
+  // const [route, setRoute] = useState([]);
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   router.push("/incidents/incidentList" + route);
+  // };
+
   return (
     <>
       <Headline>Was ist passiert?</Headline>
@@ -46,7 +56,12 @@ function IncidentForm({ appendListEntry }) {
           rows="7"
           required
         ></InputField>
-        <button type="submit">Submit</button>
+        <Button
+          type="submit"
+          onClick={() => router.push("/incidents/incidentList")}
+        >
+          Submit
+        </Button>
       </Form>
     </>
   );
