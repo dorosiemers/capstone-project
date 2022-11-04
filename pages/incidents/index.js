@@ -1,41 +1,41 @@
+import React, { useContext } from "react";
 import styled from "styled-components";
+import IncidentForm from "../../components/incidentForm";
+import { useIncidents } from "../../context/listContext";
 
-const IncidentForm = () => {
+function IncidentPage() {
+  const incidents = useIncidents().incidents;
+  const setIncidents = useIncidents().setIncidents;
+  function appendListEntry(time, location, offender, incident) {
+    setIncidents((listEntry) => [
+      ...listEntry,
+      {
+        time,
+        location,
+        offender,
+        incident,
+        id: Math.random().toString(),
+      },
+    ]);
+  }
+
   return (
-    <div>
-      <Headline>Was ist passiert?</Headline>
-      <Form>
-        <label for="date">Wann?</label>
-        <input type="date" id="date" name="date"></input>
-        <label for="location">Wo?</label>
-        <input type="text" id="location" name="location"></input>
-        <label for="offender">Wer?</label>
-        <input type="text" id="offender" name="offender"></input>
-        <label for="incident">Was ist passiert?</label>
-        <input type="text" id="incident" name="incident"></input>
-      </Form>
-    </div>
+    <Container>
+      <IncidentForm appendListEntry={appendListEntry} />
+    </Container>
   );
-};
+}
 
-export default IncidentForm;
+export default IncidentPage;
 
 const Container = styled.div`
-  text-align: center;
-  border: solid 1px #ddd;
   padding: 10px;
   margin: 10px;
+  cursor: default;
 `;
 
-const Headline = styled.h1`
-  text-align: center;
-  padding: 10px;
-  margin: 10px;
-`;
-
-const Form = styled.section`
-  text-align: center;
-  border: solid 1px #ddd;
+const Form = styled.form`
+  display: flex;
   padding: 10px;
   margin: 10px;
 `;

@@ -17,7 +17,7 @@ export const resourcesList = [
     id: 3,
     name: "Hilfe-Telefon Sexueller Missbrauch",
     link: "https://www.hilfe-portal-missbrauch.de/startseite",
-    tel: "0800 30 50 750",
+    tel: "0800 22 55 530",
     location: "Bund",
   },
   {
