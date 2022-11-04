@@ -1,23 +1,32 @@
 import styled from "styled-components";
+import ListEntry from "../../components/listEntry";
+import { useIncidents } from "../../context/listContext";
 
-const incidentList = () => {
+function IncidentList() {
+  const incidents = useIncidents().incidents;
   return (
     <Container>
       <Headline>Deine Erlebnisse</Headline>
       <List>
-        <ListItem>Vorfall1</ListItem>
-        <ListItem>Vorfall2</ListItem>
-        <ListItem>Vorfall3</ListItem>
-        <ListItem>Vorfall4</ListItem>
-        <ListItem>Vorfall5</ListItem>
+        {incidents?.map((listEntry) => (
+          <ListEntry
+            key={listEntry.id}
+            time={listEntry.time}
+            location={listEntry.location}
+            offender={listEntry.offender}
+            incident={listEntry.incident}
+          />
+        ))}
       </List>
     </Container>
   );
-};
+}
 
-export default incidentList;
+export default IncidentList;
 
 const Container = styled.div`
+  display: flex;
+  flex-direction: column;
   text-align: center;
   padding: 10px;
   margin: 10px;
@@ -33,12 +42,4 @@ const List = styled.ul`
   text-align: center;
   padding: 10px;
   margin: 10px;
-`;
-
-const ListItem = styled.li`
-  text-align: start;
-  border: solid 1px #ddd;
-  padding: 10px;
-  margin: 10px;
-  list-style: none;
 `;
