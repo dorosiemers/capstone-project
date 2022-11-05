@@ -4,6 +4,7 @@ import { useIncidents } from "../../context/listContext";
 
 function IncidentList() {
   const incidents = useIncidents().incidents;
+
   return (
     <Container>
       <Headline>Deine Erlebnisse</Headline>
@@ -27,7 +28,7 @@ export default IncidentList;
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  text-align: center;
+
   padding: 10px;
   margin: 10px;
 `;
@@ -39,7 +40,6 @@ const Headline = styled.h1`
 `;
 
 const List = styled.ul`
-  text-align: center;
   padding: 10px;
   margin: 10px;
 `;
