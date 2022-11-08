@@ -7,7 +7,6 @@ function IncidentList() {
   const { incidents, setIncidents } = useContext(ListContext);
   console.log(incidents);
   function handleRemove(id) {
-    console.log(id);
     const newList = incidents.filter((listEntry) => listEntry.id !== id);
 
     setIncidents(newList);
@@ -50,8 +49,6 @@ const List = styled.ul`
   padding: 10px;
   margin: 10px;
 `;
-
-const Card = styled.div``;
 
 const Button = styled.button`
   z-index: 2;
