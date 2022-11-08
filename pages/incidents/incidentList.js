@@ -1,9 +1,9 @@
 import styled from "styled-components";
+import React, { useContext } from "react";
+import { ListContext } from "../../context/listContext";
 import ListEntry from "../../components/listEntry";
-import { useIncidents } from "../../context/listContext";
-
 function IncidentList() {
-  const incidents = useIncidents().incidents;
+  const { incidents, setIncidents } = useContext(ListContext);
   return (
     <Container>
       <Headline>Deine Erlebnisse</Headline>
@@ -21,25 +21,19 @@ function IncidentList() {
     </Container>
   );
 }
-
 export default IncidentList;
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  text-align: center;
   padding: 10px;
   margin: 10px;
 `;
-
 const Headline = styled.h1`
   text-align: center;
   padding: 10px;
   margin: 10px;
 `;
-
 const List = styled.ul`
-  text-align: center;
   padding: 10px;
   margin: 10px;
 `;
