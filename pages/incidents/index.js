@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import IncidentForm from "../../components/incidentForm";
 import { ListContext } from "../../context/listContext";
+
 function IncidentPage() {
   const { incidents, setIncidents } = useContext(ListContext);
   function appendListEntry(time, location, offender, incident) {
