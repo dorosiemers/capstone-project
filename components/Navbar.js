@@ -6,7 +6,7 @@ import LogoGraphic from "../public/images/logo.svg";
 const Navbar = () => {
   return (
     <div>
-      <Logo>
+      <Logo href="/">
         <Image alt="Logo" src={LogoGraphic} width={350} height={300} />
       </Logo>
       <Nav>
@@ -39,7 +39,7 @@ const Nav = styled.nav`
   cursor: pointer;
 `;
 
-const Logo = styled.div`
+const Logo = styled.a`
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
