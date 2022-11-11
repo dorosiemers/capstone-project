@@ -12,11 +12,6 @@ function IncidentForm({ appendListEntry }) {
   }
 
   const router = useRouter();
-  // const [route, setRoute] = useState([]);
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   router.push("/incidents/incidentList" + route);
-  // };
 
   return (
     <>
