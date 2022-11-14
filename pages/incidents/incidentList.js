@@ -14,6 +14,7 @@ function IncidentList() {
       <List>
         {incidents?.map((listEntry) => (
           <ListEntry
+            key={listEntry.id}
             data={listEntry}
             handleRemove={handleRemove}
             incidents={incidents}
