@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+
 export default function ListEntry({
   data,
   incidents,
@@ -11,12 +12,13 @@ export default function ListEntry({
   const [time, setTime] = useState(data.time);
   const [offender, setOffender] = useState(data.offender);
   const [incident, setIncident] = useState(data.incident);
+
   function handleSave() {
     setIncidents(
-      incidents.map((e) =>
-        e.id === data.id
+      incidents.map((listEntry) =>
+        listEntry.id === data.id
           ? { id: data.id, location, time, offender, incident }
-          : e
+          : listEntry
       )
     );
     setIsEditable(false);
@@ -33,53 +35,68 @@ export default function ListEntry({
             x
           </Button>
           <Button type="button" onClick={() => setIsEditable(true)}>
-            Edit
+            Bearbeiten
           </Button>
         </>
       )}
-      {isEditable && (
-        <>
-          <input
-            type="text"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-          />
-          <input
-            type="date"
-            value={time}
-            onChange={(e) => setTime(e.target.value)}
-          />
-          <input
-            type="text"
-            value={offender}
-            onChange={(e) => setOffender(e.target.value)}
-          />
-          <input
-            type="text"
-            value={incident}
-            onChange={(e) => setIncident(e.target.value)}
-          />
-          <Button type="button" onClick={() => handleRemove(data.id)}>
-            x
-          </Button>
-          <Button type="button" onClick={handleSave}>
-            Save
-          </Button>
-        </>
-      )}
+      <EditCard>
+        {isEditable && (
+          <>
+            <InputField
+              type="text"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+            />
+            <InputField
+              type="date"
+              value={time}
+              onChange={(e) => setTime(e.target.value)}
+            />
+            <InputField
+              type="text"
+              value={offender}
+              onChange={(e) => setOffender(e.target.value)}
+            />
+            <InputField
+              type="text"
+              value={incident}
+              onChange={(e) => setIncident(e.target.value)}
+            />
+            <DeleteButton type="button" onClick={() => handleRemove(data.id)}>
+              x
+            </DeleteButton>
+            <Button type="button" onClick={handleSave}>
+              Änderungen speichern
+            </Button>
+          </>
+        )}
+      </EditCard>
     </Card>
   );
 }
+
 const Card = styled.section`
   border: solid 1px #ddd;
+  position: relative;
   padding: 10px;
   margin: 10px;
-  position: relative;
 `;
+const EditCard = styled.form`
+  padding: 10px;
+  margin: 10px;
+`;
+
+const InputField = styled.input`
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+`;
+
 const Headline = styled.h2`
   padding: 10px;
   margin: 10px;
 `;
+
 const Output = styled.p`
   width: 100%;
   word-break: break-all;
@@ -88,13 +105,23 @@ const Output = styled.p`
   padding: 10px;
   margin: 10px;
 `;
-const Button = styled.button`
+
+const DeleteButton = styled.button`
   z-index: 2;
-  position: relative;
+  position: absolute;
   right: 10px;
   top: 10px;
   color: #ddd;
   font-family: "Noto Sans", sans-serif;
   color: #a18ba7;
   cursor: pointer;
+`;
+
+const Button = styled.button`
+  color: #ddd;
+  font-family: "Noto Sans", sans-serif;
+  color: #a18ba7;
+  cursor: pointer;
+  margin: 10px;
+  padding: 10px;
 `;
