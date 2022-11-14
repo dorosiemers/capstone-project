@@ -2,7 +2,6 @@ import styled from "styled-components";
 import React, { useContext, useState } from "react";
 import { ListContext } from "../../context/listContext";
 import ListEntry from "../../components/listEntry";
-
 function IncidentList() {
   const { incidents, setIncidents } = useContext(ListContext);
   function handleRemove(id) {
@@ -15,7 +14,6 @@ function IncidentList() {
       <List>
         {incidents?.map((listEntry) => (
           <ListEntry
-            key={listEntry.id}
             data={listEntry}
             handleRemove={handleRemove}
             incidents={incidents}
