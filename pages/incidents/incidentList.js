@@ -5,35 +5,28 @@ import ListEntry from "../../components/listEntry";
 
 function IncidentList() {
   const { incidents, setIncidents } = useContext(ListContext);
-  console.log(incidents);
   function handleRemove(id) {
     const newList = incidents.filter((listEntry) => listEntry.id !== id);
-
     setIncidents(newList);
   }
-
   return (
     <Container>
       <Headline>Deine Erlebnisse</Headline>
       <List>
         {incidents?.map((listEntry) => (
-          <>
-            <ListEntry
-              id={listEntry.id}
-              time={listEntry.time}
-              location={listEntry.location}
-              offender={listEntry.offender}
-              incident={listEntry.incident}
-              handleRemove={handleRemove}
-            ></ListEntry>
-          </>
+          <ListEntry
+            key={listEntry.id}
+            data={listEntry}
+            handleRemove={handleRemove}
+            incidents={incidents}
+            setIncidents={setIncidents}
+          ></ListEntry>
         ))}
       </List>
     </Container>
   );
 }
 export default IncidentList;
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -49,7 +42,6 @@ const List = styled.ul`
   padding: 10px;
   margin: 10px;
 `;
-
 const Button = styled.button`
   z-index: 2;
 `;
