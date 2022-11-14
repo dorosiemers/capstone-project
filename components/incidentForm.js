@@ -54,7 +54,7 @@ function IncidentForm({ appendListEntry }) {
           type="submit"
           onClick={() => router.push("/incidents/incidentList")}
         >
-          Submit
+          Speichern
         </Button>
       </Form>
     </>
