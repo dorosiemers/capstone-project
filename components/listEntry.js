@@ -14,10 +14,10 @@ export default function ListEntry({
   const [incident, setIncident] = useState(data.incident);
   function handleSave() {
     setIncidents(
-      incidents.map((e) =>
-        e.id === data.id
+      incidents.map((incident) =>
+        incident.id === data.id
           ? { id: data.id, location, time, offender, incident }
-          : e
+          : incident
       )
     );
     setIsEditable(false);
@@ -44,22 +44,22 @@ export default function ListEntry({
             <InputField
               type="text"
               value={location}
-              onChange={(e) => setLocation(e.target.value)}
+              onChange={(event) => setLocation(event.target.value)}
             />
             <InputField
               type="date"
               value={time}
-              onChange={(e) => setTime(e.target.value)}
+              onChange={(event) => setTime(event.target.value)}
             />
             <InputField
               type="text"
               value={offender}
-              onChange={(e) => setOffender(e.target.value)}
+              onChange={(event) => setOffender(event.target.value)}
             />
             <InputField
               type="text"
               value={incident}
-              onChange={(e) => setIncident(e.target.value)}
+              onChange={(event) => setIncident(event.target.value)}
             />
             <Button type="button" onClick={() => handleRemove(data.id)}>
               x
