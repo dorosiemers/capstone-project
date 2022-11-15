@@ -16,6 +16,10 @@ function IncidentForm({ appendListEntry }) {
   return (
     <>
       <Headline>Was ist passiert?</Headline>
+      <Text>
+        Hier ist Platz deine Erlebnisse aufzuschreiben. Deine gespeicherten
+        Erlebnisse findest du dann unter Vorfälle.
+      </Text>
       <Form onSubmit={sendForm}>
         <InputLabel htmlfor="time">Wann?</InputLabel>
         <InputField
@@ -64,6 +68,12 @@ function IncidentForm({ appendListEntry }) {
 export default IncidentForm;
 
 const Headline = styled.h1`
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+`;
+
+const Text = styled.p`
   text-align: center;
   padding: 10px;
   margin: 10px;

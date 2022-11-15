@@ -31,12 +31,12 @@ export default function ListEntry({
           <Output>{time} </Output>
           <Output>{offender} </Output>
           <Output>{incident} </Output>
-          <Button type="button" onClick={() => handleRemove(data.id)}>
+          <DeleteButton type="button" onClick={() => handleRemove(data.id)}>
             x
-          </Button>
-          <Button type="button" onClick={() => setIsEditable(true)}>
+          </DeleteButton>
+          <EditButton type="button" onClick={() => setIsEditable(true)}>
             Bearbeiten
-          </Button>
+          </EditButton>
         </>
       )}
       <EditCard>
@@ -65,9 +65,9 @@ export default function ListEntry({
             <DeleteButton type="button" onClick={() => handleRemove(data.id)}>
               x
             </DeleteButton>
-            <Button type="button" onClick={handleSave}>
+            <SaveEditButton type="button" onClick={handleSave}>
               Änderungen speichern
-            </Button>
+            </SaveEditButton>
           </>
         )}
       </EditCard>
@@ -78,18 +78,16 @@ export default function ListEntry({
 const Card = styled.section`
   border: solid 1px #ddd;
   position: relative;
-  padding: 10px;
-  margin: 10px;
-`;
-const EditCard = styled.form`
-  padding: 10px;
-  margin: 10px;
 `;
 
-const InputField = styled.input`
+const EditButton = styled.button`
   display: flex;
+  margin: 20px;
   padding: 10px;
-  margin: 10px;
+  color: #ddd;
+  font-family: "Noto Sans", sans-serif;
+  color: #a18ba7;
+  cursor: pointer;
 `;
 
 const Headline = styled.h2`
@@ -99,11 +97,11 @@ const Headline = styled.h2`
 
 const Output = styled.p`
   width: 100%;
+  padding: 10px;
+  margin: 10px;
   word-break: break-all;
   display: flex;
   flex-wrap: wrap;
-  padding: 10px;
-  margin: 10px;
 `;
 
 const DeleteButton = styled.button`
@@ -117,11 +115,22 @@ const DeleteButton = styled.button`
   cursor: pointer;
 `;
 
-const Button = styled.button`
+const EditCard = styled.form`
+  padding: 10px;
+  margin: 10px;
+`;
+
+const InputField = styled.input`
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+`;
+
+const SaveEditButton = styled.button`
+  margin: 10px;
+  padding: 10px;
   color: #ddd;
   font-family: "Noto Sans", sans-serif;
   color: #a18ba7;
   cursor: pointer;
-  margin: 10px;
-  padding: 10px;
 `;

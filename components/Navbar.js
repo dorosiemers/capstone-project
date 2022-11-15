@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
-import LogoGraphic from "../public/images/logo.svg";
+import LogoGraphic from "../public/images/bigLogo.svg";
 
 const Navbar = () => {
   return (
@@ -14,13 +14,13 @@ const Navbar = () => {
           <LinkText>Home</LinkText>
         </Link>
         <Link href="/incidents">
-          <LinkText>Input</LinkText>
+          <LinkText>Eintrag</LinkText>
         </Link>
         <Link href="/incidents/incidentList">
-          <LinkText>List</LinkText>
+          <LinkText>Vorfälle</LinkText>
         </Link>
         <Link href="/resources">
-          <LinkText>Resources</LinkText>
+          <LinkText>Hilfestellen</LinkText>
         </Link>
       </Nav>
     </div>
