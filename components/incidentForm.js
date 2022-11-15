@@ -47,13 +47,13 @@ function IncidentForm({ appendListEntry }) {
           maxLength="240"
         ></InputField>
         <InputLabel htmlfor="incident">Was ist passiert?</InputLabel>
-        <InputField
+        <InputTextfield
           type="text"
           id="incident"
           name="incident"
           rows="7"
           required
-        ></InputField>
+        ></InputTextfield>
         <Button
           type="submit"
           onClick={() => router.push("/incidents/incidentList")}
@@ -101,6 +101,12 @@ const InputLabel = styled.label`
 `;
 
 const InputField = styled.input`
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+`;
+
+const InputTextfield = styled.textarea`
   display: flex;
   padding: 10px;
   margin: 10px;

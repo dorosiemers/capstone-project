@@ -43,22 +43,27 @@ export default function ListEntry({
         {isEditable && (
           <>
             <InputField
-              type="text"
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
-            />
-            <InputField
               type="date"
+              rows="2"
               value={time}
               onChange={(e) => setTime(e.target.value)}
             />
             <InputField
               type="text"
-              value={offender}
-              onChange={(e) => setOffender(e.target.value)}
+              rows="2"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
             />
             <InputField
               type="text"
+              rows="2"
+              value={offender}
+              onChange={(e) => setOffender(e.target.value)}
+            />
+            <InputTextfield
+              type="text"
+              rows="7"
+              required
               value={incident}
               onChange={(e) => setIncident(e.target.value)}
             />
@@ -121,6 +126,12 @@ const EditCard = styled.form`
 `;
 
 const InputField = styled.input`
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+`;
+
+const InputTextfield = styled.textarea`
   display: flex;
   padding: 10px;
   margin: 10px;
