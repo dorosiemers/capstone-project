@@ -24,31 +24,31 @@ export default function Home() {
       </Head>
       <Main>
         <div>
-          <h1>Tracker für Sexismus und Diskriminierung</h1>
+          <Headline>Tracker für Sexismus und Diskriminierung</Headline>
           <Container>
-            <h2>Was ist passiert?</h2>
-            <p>Hier ist Platz, um deine Erlebnisse aufzuschreiben. </p>
+            <Headline2>Was ist passiert?</Headline2>
+            <Text>Hier ist Platz, um deine Erlebnisse aufzuschreiben. </Text>
             <Link href="/incidents" passHref>
               <Button variant="contained">Schreib es auf</Button>
             </Link>
           </Container>
           <Container>
-            <h2>Deine Erlebnisse</h2>
-            <p>
+            <Headline2>Deine Erlebnisse</Headline2>
+            <Text>
               Du hast die Möglichkeit deine Einträge zu speichern und später
               erneut auf sie zuzugreifen.
-            </p>
+            </Text>
             <Link href="/incidents/incidentList" passHref>
               <Button variant="contained">Deine Einträge</Button>
             </Link>
           </Container>
           <Container>
-            <h2>Hilfestellen und Beratungsangebote</h2>
-            <p>
+            <Headline2>Hilfestellen und Beratungsangebote</Headline2>
+            <Text>
               Du bist nicht allein! Wir haben dir eine Liste mit verschiedenen
               Hilfs- und Beratungsangeboten zusammengestellt. Hier findest du
               Angebote und Kontaktmöglichkeiten.
-            </p>
+            </Text>
             <Link href="/resources" passHref>
               <Button variant="contained">Hilfsangebote</Button>
             </Link>
@@ -66,15 +66,35 @@ const Main = styled.main`
 
 const Container = styled.div`
   text-align: center;
-  border: solid 1px #ddd;
   padding: 10px;
   margin: 10px;
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 0px 10px 13px -7px #3d2443, 13px -4px 36px 3px rgba(0, 0, 0, 0.35);
   cursor: default;
+`;
+
+const Headline = styled.h1`
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+`;
+
+const Headline2 = styled.h2`
+  padding: 10px;
+  margin: 10px;
+`;
+
+const Text = styled.p`
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
 `;
 
 const Button = styled.button`
   color: #ddd;
   font-family: "Noto Sans", sans-serif;
   color: #a18ba7;
+  box-shadow: 13px -4px 36px 3px rgba(0, 0, 0, 0),
+    0px 0px 25px 8px rgba(0, 0, 0, 0.21);
   cursor: pointer;
 `;

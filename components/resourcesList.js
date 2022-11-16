@@ -1,21 +1,25 @@
 import React from "react";
-import { resourcesList } from "../data/resourcesList";
 import Link from "next/link";
 import styled from "styled-components";
+import { RiHomeHeartLine, RiPhoneLine } from "react-icons/ri";
 
 export default function ResourcesList({ item }) {
   const telefonnummer = "tel:" + item.tel;
   return (
     <Container>
-      <Headline>{item.name}</Headline>
+      <Headline3>{item.name}</Headline3>
       <Link target="_blank" href={item.link}>
         <a>
-          <LinkStyle>Homepage</LinkStyle>
+          <LinkStyle>
+            <RiHomeHeartLine /> Homepage
+          </LinkStyle>
         </a>
       </Link>
       <Link href={telefonnummer}>
         <a>
-          <LinkStyle>Telefonnummer</LinkStyle>
+          <LinkStyle>
+            <RiPhoneLine /> Telefonnummer
+          </LinkStyle>
         </a>
       </Link>
     </Container>
@@ -23,13 +27,14 @@ export default function ResourcesList({ item }) {
 }
 
 const Container = styled.div`
-  border: solid 1px #ddd;
   padding: 10px;
   margin: 10px;
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 0px 10px 13px -7px #3d2443, 13px -4px 36px 3px rgba(0, 0, 0, 0.35);
   cursor: default;
 `;
 
-const Headline = styled.h3`
+const Headline3 = styled.h3`
   padding: 10px;
   margin: 10px;
 `;

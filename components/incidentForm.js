@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useRouter } from "next/router";
+import { RiSave3Fill } from "react-icons/ri";
 
 function IncidentForm({ appendListEntry }) {
   function sendForm(event) {
@@ -58,7 +59,7 @@ function IncidentForm({ appendListEntry }) {
           type="submit"
           onClick={() => router.push("/incidents/incidentList")}
         >
-          Speichern
+          Speichern <RiSave3Fill />
         </Button>
       </Form>
     </>
@@ -80,9 +81,10 @@ const Text = styled.p`
 `;
 
 const Form = styled.form`
-  border: solid 1px #ddd;
   padding: 10px;
   margin: 10px;
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 0px 10px 13px -7px #3d2443, 13px -4px 36px 3px rgba(0, 0, 0, 0.35);
 `;
 
 const Button = styled.button`
@@ -92,6 +94,8 @@ const Button = styled.button`
   color: #ddd;
   font-family: "Noto Sans", sans-serif;
   color: #a18ba7;
+  box-shadow: 13px -4px 36px 3px rgba(0, 0, 0, 0),
+    0px 0px 25px 8px rgba(0, 0, 0, 0.21);
   cursor: pointer;
 `;
 

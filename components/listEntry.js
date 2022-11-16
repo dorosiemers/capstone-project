@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { RiDeleteBin2Line, RiEditLine, RiSave3Fill } from "react-icons/ri";
 
 export default function ListEntry({
   data,
@@ -27,15 +28,15 @@ export default function ListEntry({
     <Card>
       {!isEditable && (
         <>
-          <Headline>{location} </Headline>
+          <Headline2>{location} </Headline2>
           <Output>{time} </Output>
           <Output>{offender} </Output>
           <Output>{incident} </Output>
           <DeleteButton type="button" onClick={() => handleRemove(data.id)}>
-            x
+            <RiDeleteBin2Line />
           </DeleteButton>
           <EditButton type="button" onClick={() => setIsEditable(true)}>
-            Bearbeiten
+            Bearbeiten <RiEditLine />
           </EditButton>
         </>
       )}
@@ -68,10 +69,10 @@ export default function ListEntry({
               onChange={(e) => setIncident(e.target.value)}
             />
             <DeleteButton type="button" onClick={() => handleRemove(data.id)}>
-              x
+              <RiDeleteBin2Line />
             </DeleteButton>
             <SaveEditButton type="button" onClick={handleSave}>
-              Änderungen speichern
+              Änderungen speichern <RiSave3Fill />
             </SaveEditButton>
           </>
         )}
@@ -81,8 +82,9 @@ export default function ListEntry({
 }
 
 const Card = styled.section`
-  border: solid 1px #ddd;
   position: relative;
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 0px 10px 13px -7px #3d2443, 13px -4px 36px 3px rgba(0, 0, 0, 0.35);
 `;
 
 const EditButton = styled.button`
@@ -92,10 +94,12 @@ const EditButton = styled.button`
   color: #ddd;
   font-family: "Noto Sans", sans-serif;
   color: #a18ba7;
+  box-shadow: 13px -4px 36px 3px rgba(0, 0, 0, 0),
+    0px 0px 25px 8px rgba(0, 0, 0, 0.21);
   cursor: pointer;
 `;
 
-const Headline = styled.h2`
+const Headline2 = styled.h2`
   padding: 10px;
   margin: 10px;
 `;
@@ -117,6 +121,8 @@ const DeleteButton = styled.button`
   color: #ddd;
   font-family: "Noto Sans", sans-serif;
   color: #a18ba7;
+  box-shadow: 13px -4px 36px 3px rgba(0, 0, 0, 0),
+    0px 0px 25px 8px rgba(0, 0, 0, 0.21);
   cursor: pointer;
 `;
 
@@ -143,5 +149,7 @@ const SaveEditButton = styled.button`
   color: #ddd;
   font-family: "Noto Sans", sans-serif;
   color: #a18ba7;
+  box-shadow: 13px -4px 36px 3px rgba(0, 0, 0, 0),
+    0px 0px 25px 8px rgba(0, 0, 0, 0.21);
   cursor: pointer;
 `;
