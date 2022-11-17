@@ -14,11 +14,11 @@ const GlobalStyle = createGlobalStyle`
           font-family: 'Noto Sans', sans-serif;
           background-color: var(--background-primary);
           color: var(--text-primary);
+          text-shadow: 1px 1px #3d2443;
       }
 
       a {
         text-decoration: none;
-        
       }
   `;
 

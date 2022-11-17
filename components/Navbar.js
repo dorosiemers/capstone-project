@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
-import LogoGraphic from "../public/images/bigLogo.svg";
+import LogoGraphic from "../public/images/logoSchatten.svg";
 
 const Navbar = () => {
   return (
@@ -47,4 +47,13 @@ const Logo = styled.a`
 
 const LinkText = styled.a`
   margin-left: 12px;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:focus {
+    color: #584f5a;
+  }
+  &:active {
+    color: #584f5a;
+  }
 `;

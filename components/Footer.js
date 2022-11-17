@@ -1,9 +1,12 @@
 import styled from "styled-components";
+import { RiCopyrightLine } from "react-icons/ri";
 
 const Footer = () => {
   return (
     <Foot>
-      <P1>Copyright 2022</P1>
+      <P1>
+        <RiCopyrightLine /> 2022
+      </P1>
       <P2>
         „Above all, be the heroine of your life, not the victim.“ - Nora Ephron
       </P2>

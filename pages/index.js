@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import styled from "styled-components";
+import Button from "../components/button/Button";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -29,7 +30,7 @@ export default function Home() {
             <Headline2>Was ist passiert?</Headline2>
             <Text>Hier ist Platz, um deine Erlebnisse aufzuschreiben. </Text>
             <Link href="/incidents" passHref>
-              <Button variant="contained">Schreib es auf</Button>
+              <NavButton variant="contained">Schreib es auf</NavButton>
             </Link>
           </Container>
           <Container>
@@ -39,7 +40,7 @@ export default function Home() {
               erneut auf sie zuzugreifen.
             </Text>
             <Link href="/incidents/incidentList" passHref>
-              <Button variant="contained">Deine Einträge</Button>
+              <NavButton variant="contained">Deine Einträge</NavButton>
             </Link>
           </Container>
           <Container>
@@ -50,7 +51,7 @@ export default function Home() {
               Angebote und Kontaktmöglichkeiten.
             </Text>
             <Link href="/resources" passHref>
-              <Button variant="contained">Hilfsangebote</Button>
+              <NavButton variant="contained">Hilfsangebote</NavButton>
             </Link>
           </Container>
         </div>
@@ -90,11 +91,7 @@ const Text = styled.p`
   margin: 10px;
 `;
 
-const Button = styled.button`
-  color: #ddd;
-  font-family: "Noto Sans", sans-serif;
-  color: #a18ba7;
-  box-shadow: 13px -4px 36px 3px rgba(0, 0, 0, 0),
-    0px 0px 25px 8px rgba(0, 0, 0, 0.21);
-  cursor: pointer;
+const NavButton = styled(Button)`
+  margin: auto;
+  position: relative;
 `;

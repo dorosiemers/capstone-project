@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useRouter } from "next/router";
+import Button from "./button/Button";
 import { RiSave3Fill } from "react-icons/ri";
 
 function IncidentForm({ appendListEntry }) {
@@ -87,7 +88,7 @@ const Form = styled.form`
   box-shadow: 0px 10px 13px -7px #3d2443, 13px -4px 36px 3px rgba(0, 0, 0, 0.35);
 `;
 
-const Button = styled.button`
+const StyledButton = styled.button`
   display: flex;
   padding: 10px;
   margin: 10px;

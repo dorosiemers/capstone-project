@@ -9,16 +9,25 @@ export default function Button({ children, type = "button", ...props }) {
 }
 
 const StyledButton = styled.button`
-  padding: 0.5em 1em;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  border-radius: 0.2rem;
-  background: #fae;
-  color: #000;
-  font-size: 1em;
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+  color: #ddd;
+  font-family: "Noto Sans", sans-serif;
+  color: #a18ba7;
+  box-shadow: 13px -4px 36px 3px rgba(0, 0, 0, 0),
+    0px 0px 25px 8px rgba(0, 0, 0, 0.21);
+  cursor: pointer;
+
   &:hover {
-    background: #d8b;
+    text-decoration: underline;
+    color: #a18ba7;
+    font: #ddd;
+  }
+  &:focus {
+    color: #584f5a;
   }
   &:active {
-    background: #bad;
+    color: #584f5a;
   }
 `;

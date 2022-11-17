@@ -41,7 +41,16 @@ const Headline3 = styled.h3`
 
 const LinkStyle = styled.a`
   display: flex;
-  color: #3d2443;
+  color: #f5f3f6;
   padding: 10px;
   margin: 10px;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:focus {
+    color: #584f5a;
+  }
+  &:active {
+    color: #584f5a;
+  }
 `;
