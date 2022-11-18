@@ -1,8 +1,8 @@
 import Head from "next/head";
-import Link from "next/link";
 import styled from "styled-components";
 import Button from "../components/button/Button";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 export default function Home() {
   const [state, setState] = useState({ data: "" });
@@ -15,6 +15,8 @@ export default function Home() {
       setState(data);
     }
   }, []);
+
+  const router = useRouter();
 
   return (
     <div>
@@ -29,9 +31,12 @@ export default function Home() {
           <Container>
             <Headline2>Was ist passiert?</Headline2>
             <Text>Hier ist Platz, um deine Erlebnisse aufzuschreiben. </Text>
-            <Link href="/incidents" passHref>
-              <NavButton variant="contained">Schreib es auf</NavButton>
-            </Link>
+            <PagesButton
+              type="button"
+              onClick={() => router.push("/incidents")}
+            >
+              Schreib es auf
+            </PagesButton>
           </Container>
           <Container>
             <Headline2>Deine Erlebnisse</Headline2>
@@ -39,9 +44,13 @@ export default function Home() {
               Du hast die Möglichkeit deine Einträge zu speichern und später
               erneut auf sie zuzugreifen.
             </Text>
-            <Link href="/incidents/incidentList" passHref>
-              <NavButton variant="contained">Deine Einträge</NavButton>
-            </Link>
+
+            <PagesButton
+              type="button"
+              onClick={() => router.push("/incidents/incidentList")}
+            >
+              Deine Einträge
+            </PagesButton>
           </Container>
           <Container>
             <Headline2>Hilfestellen und Beratungsangebote</Headline2>
@@ -50,9 +59,13 @@ export default function Home() {
               Hilfs- und Beratungsangeboten zusammengestellt. Hier findest du
               Angebote und Kontaktmöglichkeiten.
             </Text>
-            <Link href="/resources" passHref>
-              <NavButton variant="contained">Hilfsangebote</NavButton>
-            </Link>
+
+            <PagesButton
+              type="button"
+              onClick={() => router.push("/resources")}
+            >
+              Hilfestellen
+            </PagesButton>
           </Container>
         </div>
       </Main>
@@ -91,7 +104,7 @@ const Text = styled.p`
   margin: 10px;
 `;
 
-const NavButton = styled(Button)`
+const PagesButton = styled(Button)`
   margin: auto;
   position: relative;
 `;

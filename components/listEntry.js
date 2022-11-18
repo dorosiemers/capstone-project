@@ -1,8 +1,8 @@
 import { useState } from "react";
 import styled from "styled-components";
 import Button from "./button/Button";
+import { time } from "./datepicker/Datepicker";
 import { RiDeleteBin2Line, RiEditLine, RiSave3Fill } from "react-icons/ri";
-import { Container } from "@mui/material";
 
 export default function ListEntry({
   data,
@@ -29,7 +29,7 @@ export default function ListEntry({
   return (
     <Card>
       {!isEditable && (
-        <Container>
+        <Card>
           <Headline2>{location} </Headline2>
           <Output>{time} </Output>
           <Output>{offender} </Output>
@@ -37,10 +37,10 @@ export default function ListEntry({
           <DeleteButton type="button" onClick={() => handleRemove(data.id)}>
             <RiDeleteBin2Line />
           </DeleteButton>
-          <Button type="button" onClick={() => setIsEditable(true)}>
+          <EditButton type="button" onClick={() => setIsEditable(true)}>
             Bearbeiten <RiEditLine />
-          </Button>
-        </Container>
+          </EditButton>
+        </Card>
       )}
       <EditCard>
         {isEditable && (
@@ -70,9 +70,9 @@ export default function ListEntry({
               value={incident}
               onChange={(e) => setIncident(e.target.value)}
             />
-            <Button type="button" onClick={() => handleRemove(data.id)}>
+            <DeleteButton type="button" onClick={() => handleRemove(data.id)}>
               <RiDeleteBin2Line />
-            </Button>
+            </DeleteButton>
             <Button type="button" onClick={handleSave}>
               Änderungen speichern <RiSave3Fill />
             </Button>
@@ -91,7 +91,7 @@ const Card = styled.section`
 
 const EditButton = styled.button`
   display: flex;
-  margin: 10px;
+  margin: 20px;
   padding: 10px;
   color: #ddd;
   font-family: "Noto Sans", sans-serif;
@@ -145,16 +145,4 @@ const InputTextfield = styled.textarea`
   display: flex;
   padding: 10px;
   margin: 10px;
-`;
-
-const SaveEditButton = styled.button`
-  margin: 10px;
-  padding: 10px;
-  color: #ddd;
-  font-family: "Noto Sans", sans-serif;
-  color: #a18ba7;
-  text-shadow: 1px 1px #f5f3f6;
-  box-shadow: 13px -4px 36px 3px rgba(0, 0, 0, 0),
-    0px 0px 25px 8px rgba(0, 0, 0, 0.21);
-  cursor: pointer;
 `;
