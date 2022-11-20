@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Button from "../components/button/Button";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Card from "../components/card/Card";
 
 export default function Home() {
   const [state, setState] = useState({ data: "" });
@@ -28,7 +29,7 @@ export default function Home() {
       <Main>
         <div>
           <Headline>Tracker für Sexismus und Diskriminierung</Headline>
-          <Container>
+          <HomeCard>
             <Headline2>Was ist passiert?</Headline2>
             <Text>Hier ist Platz, um deine Erlebnisse aufzuschreiben. </Text>
             <PagesButton
@@ -37,8 +38,8 @@ export default function Home() {
             >
               Schreib es auf
             </PagesButton>
-          </Container>
-          <Container>
+          </HomeCard>
+          <HomeCard>
             <Headline2>Deine Erlebnisse</Headline2>
             <Text>
               Du hast die Möglichkeit deine Einträge zu speichern und später
@@ -51,8 +52,8 @@ export default function Home() {
             >
               Deine Einträge
             </PagesButton>
-          </Container>
-          <Container>
+          </HomeCard>
+          <HomeCard>
             <Headline2>Hilfestellen und Beratungsangebote</Headline2>
             <Text>
               Du bist nicht allein! Wir haben dir eine Liste mit verschiedenen
@@ -66,7 +67,7 @@ export default function Home() {
             >
               Hilfestellen
             </PagesButton>
-          </Container>
+          </HomeCard>
         </div>
       </Main>
     </div>
@@ -78,13 +79,9 @@ const Main = styled.main`
   cursor: pointer;
 `;
 
-const Container = styled.div`
+const HomeCard = styled(Card)`
   text-align: center;
   padding: 10px;
-  margin: 10px;
-  border-radius: 15px 15px 15px 15px;
-  box-shadow: 0px 10px 13px -7px #3d2443, 13px -4px 36px 3px rgba(0, 0, 0, 0.35);
-  cursor: default;
 `;
 
 const Headline = styled.h1`

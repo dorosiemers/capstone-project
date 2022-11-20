@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import Button from "./button/Button";
 import Form from "./form/Form";
+import Card from "./card/Card";
 import { RiDeleteBin2Line, RiEditLine, RiSave3Fill } from "react-icons/ri";
 
 export default function ListEntry({
@@ -89,22 +90,10 @@ const Container = styled.div`
   cursor: default;
 `;
 
-const Card = styled.section`
-  position: relative;
-  border-radius: 15px 15px 15px 15px;
-  box-shadow: 0px 10px 13px -7px #3d2443, 13px -4px 36px 3px rgba(0, 0, 0, 0.35);
-`;
-
-const EditButton = styled.button`
+const EditButton = styled(Button)`
   display: flex;
   margin: 20px;
   padding: 10px;
-  color: #ddd;
-  font-family: "Noto Sans", sans-serif;
-  color: #a18ba7;
-  text-shadow: 1px 1px #f5f3f6;
-  box-shadow: 13px -4px 36px 3px rgba(0, 0, 0, 0),
-    0px 0px 25px 8px rgba(0, 0, 0, 0.21);
 `;
 
 const Headline2 = styled.h2`
@@ -122,24 +111,12 @@ const Output = styled.p`
 `;
 
 const DeleteButton = styled(Button)`
-  z-index: 2;
   position: absolute;
   right: 20px;
   top: 20px;
-  color: #ddd;
-  font-family: "Noto Sans", sans-serif;
-  color: #a18ba7;
-  text-shadow: 1px 1px #f5f3f6;
-  box-shadow: 13px -4px 36px 3px rgba(0, 0, 0, 0),
-    0px 0px 25px 8px rgba(0, 0, 0, 0.21);
 `;
 
-const EditCard = styled.form`
-  padding: 10px;
-  margin: 10px;
-  border-radius: 15px 15px 15px 15px;
-  box-shadow: 0px 10px 13px -7px #3d2443, 13px -4px 36px 3px rgba(0, 0, 0, 0.35);
-`;
+const EditCard = styled(Form)``;
 
 const InputField = styled.input`
   display: flex;
