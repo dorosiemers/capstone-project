@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function Card({ children, type = "form", ...props }) {
+export default function Card({ children, type = "section", ...props }) {
   return (
     <StyledCard type={type} {...props}>
       {children}
