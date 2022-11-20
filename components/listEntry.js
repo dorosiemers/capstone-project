@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import Button from "./button/Button";
-import { time } from "./datepicker/Datepicker";
+import Form from "./form/Form";
 import { RiDeleteBin2Line, RiEditLine, RiSave3Fill } from "react-icons/ri";
 
 export default function ListEntry({
@@ -27,7 +27,7 @@ export default function ListEntry({
     setIsEditable(false);
   }
   return (
-    <Card>
+    <Container>
       {!isEditable && (
         <Card>
           <Headline2>{location} </Headline2>
@@ -42,7 +42,7 @@ export default function ListEntry({
           </EditButton>
         </Card>
       )}
-      <EditCard>
+      <Form>
         {isEditable && (
           <>
             <InputField
@@ -78,10 +78,16 @@ export default function ListEntry({
             </Button>
           </>
         )}
-      </EditCard>
-    </Card>
+      </Form>
+    </Container>
   );
 }
+
+const Container = styled.div`
+  padding: 10px;
+  margin: 10px;
+  cursor: default;
+`;
 
 const Card = styled.section`
   position: relative;
@@ -99,7 +105,6 @@ const EditButton = styled.button`
   text-shadow: 1px 1px #f5f3f6;
   box-shadow: 13px -4px 36px 3px rgba(0, 0, 0, 0),
     0px 0px 25px 8px rgba(0, 0, 0, 0.21);
-  cursor: pointer;
 `;
 
 const Headline2 = styled.h2`
@@ -127,12 +132,13 @@ const DeleteButton = styled(Button)`
   text-shadow: 1px 1px #f5f3f6;
   box-shadow: 13px -4px 36px 3px rgba(0, 0, 0, 0),
     0px 0px 25px 8px rgba(0, 0, 0, 0.21);
-  cursor: pointer;
 `;
 
 const EditCard = styled.form`
   padding: 10px;
   margin: 10px;
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 0px 10px 13px -7px #3d2443, 13px -4px 36px 3px rgba(0, 0, 0, 0.35);
 `;
 
 const InputField = styled.input`

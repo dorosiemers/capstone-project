@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import Button from "./button/Button";
+import Form from "./form/Form";
 import BasicDatePicker from "./datepicker/Datepicker";
 import { RiSave3Fill } from "react-icons/ri";
 
@@ -82,13 +83,6 @@ const Text = styled.p`
   margin: 10px;
 `;
 
-const Form = styled.form`
-  padding: 10px;
-  margin: 10px;
-  border-radius: 15px 15px 15px 15px;
-  box-shadow: 0px 10px 13px -7px #3d2443, 13px -4px 36px 3px rgba(0, 0, 0, 0.35);
-`;
-
 const StyledButton = styled.button`
   display: flex;
   padding: 10px;
@@ -98,7 +92,6 @@ const StyledButton = styled.button`
   color: #a18ba7;
   box-shadow: 13px -4px 36px 3px rgba(0, 0, 0, 0),
     0px 0px 25px 8px rgba(0, 0, 0, 0.21);
-  cursor: pointer;
 `;
 
 const InputLabel = styled.label`
