@@ -116,8 +116,6 @@ const DeleteButton = styled(Button)`
   top: 20px;
 `;
 
-const EditCard = styled(Form)``;
-
 const InputField = styled.input`
   display: flex;
   padding: 10px;

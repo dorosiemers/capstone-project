@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function Form({ children, type = "form", ...props }) {
+export default function Form({ children, type = "text", ...props }) {
   return (
     <StyledForm type={type} {...props}>
       {children}
