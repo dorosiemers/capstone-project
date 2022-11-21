@@ -24,13 +24,9 @@ function IncidentPage() {
   );
 }
 export default IncidentPage;
+
 const Container = styled.div`
   padding: 10px;
   margin: 10px;
   cursor: default;
-`;
-const Form = styled.form`
-  display: flex;
-  padding: 10px;
-  margin: 10px;
 `;

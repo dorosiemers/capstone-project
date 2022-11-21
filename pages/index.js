@@ -1,7 +1,9 @@
 import Head from "next/head";
-import Link from "next/link";
 import styled from "styled-components";
+import Button from "../components/button/Button";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import Card from "../components/card/Card";
 
 export default function Home() {
   const [state, setState] = useState({ data: "" });
@@ -15,6 +17,8 @@ export default function Home() {
     }
   }, []);
 
+  const router = useRouter();
+
   return (
     <div>
       <Head>
@@ -24,35 +28,46 @@ export default function Home() {
       </Head>
       <Main>
         <div>
-          <h1>Tracker für Sexismus und Diskriminierung</h1>
-          <Container>
-            <h2>Was ist passiert?</h2>
-            <p>Hier ist Platz, um deine Erlebnisse aufzuschreiben. </p>
-            <Link href="/incidents" passHref>
-              <Button variant="contained">Schreib es auf</Button>
-            </Link>
-          </Container>
-          <Container>
-            <h2>Deine Erlebnisse</h2>
-            <p>
+          <Headline>Tracker für Sexismus und Diskriminierung</Headline>
+          <HomeCard>
+            <Headline2>Was ist passiert?</Headline2>
+            <Text>Hier ist Platz, um deine Erlebnisse aufzuschreiben. </Text>
+            <PagesButton
+              type="button"
+              onClick={() => router.push("/incidents")}
+            >
+              Schreib es auf
+            </PagesButton>
+          </HomeCard>
+          <HomeCard>
+            <Headline2>Deine Erlebnisse</Headline2>
+            <Text>
               Du hast die Möglichkeit deine Einträge zu speichern und später
               erneut auf sie zuzugreifen.
-            </p>
-            <Link href="/incidents/incidentList" passHref>
-              <Button variant="contained">Deine Einträge</Button>
-            </Link>
-          </Container>
-          <Container>
-            <h2>Hilfestellen und Beratungsangebote</h2>
-            <p>
+            </Text>
+
+            <PagesButton
+              type="button"
+              onClick={() => router.push("/incidents/incidentList")}
+            >
+              Deine Einträge
+            </PagesButton>
+          </HomeCard>
+          <HomeCard>
+            <Headline2>Hilfestellen und Beratungsangebote</Headline2>
+            <Text>
               Du bist nicht allein! Wir haben dir eine Liste mit verschiedenen
               Hilfs- und Beratungsangeboten zusammengestellt. Hier findest du
               Angebote und Kontaktmöglichkeiten.
-            </p>
-            <Link href="/resources" passHref>
-              <Button variant="contained">Hilfsangebote</Button>
-            </Link>
-          </Container>
+            </Text>
+
+            <PagesButton
+              type="button"
+              onClick={() => router.push("/resources")}
+            >
+              Hilfestellen
+            </PagesButton>
+          </HomeCard>
         </div>
       </Main>
     </div>
@@ -64,17 +79,29 @@ const Main = styled.main`
   cursor: pointer;
 `;
 
-const Container = styled.div`
+const HomeCard = styled(Card)`
   text-align: center;
-  border: solid 1px #ddd;
   padding: 10px;
-  margin: 10px;
-  cursor: default;
 `;
 
-const Button = styled.button`
-  color: #ddd;
-  font-family: "Noto Sans", sans-serif;
-  color: #a18ba7;
-  cursor: pointer;
+const Headline = styled.h1`
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+`;
+
+const Headline2 = styled.h2`
+  padding: 10px;
+  margin: 10px;
+`;
+
+const Text = styled.p`
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+`;
+
+const PagesButton = styled(Button)`
+  margin: auto;
+  position: relative;
 `;

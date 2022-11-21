@@ -12,6 +12,10 @@ function IncidentList() {
   return (
     <Container>
       <Headline>Deine Erlebnisse</Headline>
+      <Text>
+        Hier findest Du eine Auflistung deiner bisher gespeicherten Erlebnisse.
+        Du hast die Möglichkeit, diese zu bearbeiten oder zu löschen.
+      </Text>
       <List>
         {incidents?.map((listEntry) => (
           <ListEntry
@@ -27,21 +31,25 @@ function IncidentList() {
   );
 }
 export default IncidentList;
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  margin: 10px;
 `;
+
 const Headline = styled.h1`
   text-align: center;
   padding: 10px;
   margin: 10px;
 `;
-const List = styled.ul`
+
+const Text = styled.p`
+  text-align: center;
   padding: 10px;
   margin: 10px;
 `;
-const Button = styled.button`
-  z-index: 2;
+
+const List = styled.ul`
+  padding: 10px;
+  margin: 10px;
 `;

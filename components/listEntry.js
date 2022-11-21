@@ -1,5 +1,9 @@
 import { useState } from "react";
 import styled from "styled-components";
+import Button from "./button/Button";
+import Form from "./Form/form";
+import Card from "./card/Card";
+import { RiDeleteBin2Line, RiEditLine, RiSave3Fill } from "react-icons/ri";
 
 export default function ListEntry({
   data,
@@ -12,77 +16,104 @@ export default function ListEntry({
   const [time, setTime] = useState(data.time);
   const [offender, setOffender] = useState(data.offender);
   const [incident, setIncident] = useState(data.incident);
+
   function handleSave() {
     setIncidents(
-      incidents.map((incident) =>
-        incident.id === data.id
+      incidents.map((listEntry) =>
+        listEntry.id === data.id
           ? { id: data.id, location, time, offender, incident }
-          : incident
+          : listEntry
       )
     );
     setIsEditable(false);
   }
   return (
-    <Card>
+    <Container>
       {!isEditable && (
-        <>
-          <Headline>{location} </Headline>
+        <Card>
+          <Headline2>{location} </Headline2>
           <Output>{time} </Output>
           <Output>{offender} </Output>
           <Output>{incident} </Output>
-          <Button type="button" onClick={() => handleRemove(data.id)}>
-            x
-          </Button>
-          <SaveButton type="button" onClick={() => setIsEditable(true)}>
-            Bearbeiten
-          </SaveButton>
-        </>
+          <DeleteButton type="button" onClick={() => handleRemove(data.id)}>
+            <RiDeleteBin2Line />
+          </DeleteButton>
+          <EditButton type="button" onClick={() => setIsEditable(true)}>
+            Bearbeiten <RiEditLine />
+          </EditButton>
+        </Card>
       )}
-      <EditCard>
+      <Form>
         {isEditable && (
           <>
             <InputField
-              type="text"
-              value={location}
-              onChange={(event) => setLocation(event.target.value)}
-            />
-            <InputField
               type="date"
+              rows="2"
               value={time}
-              onChange={(event) => setTime(event.target.value)}
+              onChange={(e) => setTime(e.target.value)}
             />
             <InputField
               type="text"
+              rows="2"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+            />
+            <InputField
+              type="text"
+              rows="2"
               value={offender}
-              onChange={(event) => setOffender(event.target.value)}
+              onChange={(e) => setOffender(e.target.value)}
             />
-            <InputField
+            <InputTextfield
               type="text"
+              rows="7"
+              required
               value={incident}
-              onChange={(event) => setIncident(event.target.value)}
+              onChange={(e) => setIncident(e.target.value)}
             />
-            <Button type="button" onClick={() => handleRemove(data.id)}>
-              x
+            <DeleteButton type="button" onClick={() => handleRemove(data.id)}>
+              <RiDeleteBin2Line />
+            </DeleteButton>
+            <Button type="button" onClick={handleSave}>
+              Änderungen speichern <RiSave3Fill />
             </Button>
-            <SaveButton type="button" onClick={handleSave}>
-              Änderungen speichern
-            </SaveButton>
           </>
         )}
-      </EditCard>
-    </Card>
+      </Form>
+    </Container>
   );
 }
-const Card = styled.section`
-  border: solid 1px #ddd;
-  position: relative;
+
+const Container = styled.div`
+  padding: 10px;
+  margin: 10px;
+  cursor: default;
+`;
+
+const EditButton = styled(Button)`
+  display: flex;
+  margin: 20px;
+  padding: 10px;
+`;
+
+const Headline2 = styled.h2`
   padding: 10px;
   margin: 10px;
 `;
 
-const EditCard = styled.form`
+const Output = styled.p`
+  width: 100%;
   padding: 10px;
   margin: 10px;
+  word-break: break-all;
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const DeleteButton = styled(Button)`
+  position: absolute;
+  right: 20px;
+  top: 20px;
 `;
 
 const InputField = styled.input`
@@ -91,36 +122,8 @@ const InputField = styled.input`
   margin: 10px;
 `;
 
-const Headline = styled.h2`
-  padding: 10px;
-  margin: 10px;
-`;
-
-const Output = styled.p`
-  width: 100%;
-  word-break: break-all;
+const InputTextfield = styled.textarea`
   display: flex;
-  flex-wrap: wrap;
   padding: 10px;
   margin: 10px;
-`;
-
-const Button = styled.button`
-  z-index: 2;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  color: #ddd;
-  font-family: "Noto Sans", sans-serif;
-  color: #a18ba7;
-  cursor: pointer;
-`;
-
-const SaveButton = styled.button`
-  color: #ddd;
-  font-family: "Noto Sans", sans-serif;
-  color: #a18ba7;
-  cursor: pointer;
-  margin: 10px;
-  padding: 10px;
 `;

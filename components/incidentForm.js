@@ -1,5 +1,9 @@
 import styled from "styled-components";
 import { useRouter } from "next/router";
+import Button from "./button/Button";
+import Form from "./Form/form";
+
+import { RiSave3Fill } from "react-icons/ri";
 
 function IncidentForm({ appendListEntry }) {
   function sendForm(event) {
@@ -16,6 +20,10 @@ function IncidentForm({ appendListEntry }) {
   return (
     <>
       <Headline>Was ist passiert?</Headline>
+      <Text>
+        Hier ist Platz deine Erlebnisse aufzuschreiben. Deine gespeicherten
+        Erlebnisse findest du dann unter Vorfälle.
+      </Text>
       <Form onSubmit={sendForm}>
         <InputLabel htmlfor="time">Wann?</InputLabel>
         <InputField
@@ -43,18 +51,18 @@ function IncidentForm({ appendListEntry }) {
           maxLength="240"
         ></InputField>
         <InputLabel htmlfor="incident">Was ist passiert?</InputLabel>
-        <InputField
+        <InputTextfield
           type="text"
           id="incident"
           name="incident"
           rows="7"
           required
-        ></InputField>
+        ></InputTextfield>
         <Button
           type="submit"
           onClick={() => router.push("/incidents/incidentList")}
         >
-          Speichern
+          Speichern <RiSave3Fill />
         </Button>
       </Form>
     </>
@@ -69,20 +77,21 @@ const Headline = styled.h1`
   margin: 10px;
 `;
 
-const Form = styled.form`
-  border: solid 1px #ddd;
+const Text = styled.p`
+  text-align: center;
   padding: 10px;
   margin: 10px;
 `;
 
-const Button = styled.button`
+const StyledButton = styled.button`
   display: flex;
   padding: 10px;
   margin: 10px;
   color: #ddd;
   font-family: "Noto Sans", sans-serif;
   color: #a18ba7;
-  cursor: pointer;
+  box-shadow: 13px -4px 36px 3px rgba(0, 0, 0, 0),
+    0px 0px 25px 8px rgba(0, 0, 0, 0.21);
 `;
 
 const InputLabel = styled.label`
@@ -91,6 +100,12 @@ const InputLabel = styled.label`
 `;
 
 const InputField = styled.input`
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+`;
+
+const InputTextfield = styled.textarea`
   display: flex;
   padding: 10px;
   margin: 10px;

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
-import LogoGraphic from "../public/images/logo.svg";
+import LogoGraphic from "../public/images/logoSchatten.svg";
 
 const Navbar = () => {
   return (
@@ -14,13 +14,13 @@ const Navbar = () => {
           <LinkText>Home</LinkText>
         </Link>
         <Link href="/incidents">
-          <LinkText>Input</LinkText>
+          <LinkText>Eingabeformular</LinkText>
         </Link>
         <Link href="/incidents/incidentList">
-          <LinkText>List</LinkText>
+          <LinkText>Vorfälle</LinkText>
         </Link>
         <Link href="/resources">
-          <LinkText>Resources</LinkText>
+          <LinkText>Hilfestellen</LinkText>
         </Link>
       </Nav>
     </div>
@@ -36,7 +36,6 @@ const Nav = styled.nav`
   justify-content: flex-end;
   align-items: flex-end;
   border-bottom: 1px solid #ddd;
-  cursor: pointer;
 `;
 
 const Logo = styled.a`
@@ -47,4 +46,13 @@ const Logo = styled.a`
 
 const LinkText = styled.a`
   margin-left: 12px;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:focus {
+    color: #584f5a;
+  }
+  &:active {
+    color: #584f5a;
+  }
 `;
