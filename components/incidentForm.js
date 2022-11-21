@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import Button from "./button/Button";
-import Form from "./form/Form";
+import Form from "./Form/form";
 
 import { RiSave3Fill } from "react-icons/ri";
 

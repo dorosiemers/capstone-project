@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import Button from "./button/Button";
-import Form from "./form/Form";
+import Form from "./Form/form";
 import Card from "./card/Card";
 import { RiDeleteBin2Line, RiEditLine, RiSave3Fill } from "react-icons/ri";
 
