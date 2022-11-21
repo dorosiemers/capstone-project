@@ -1,12 +1,13 @@
 import React from "react";
 import Link from "next/link";
+import Card from "./card/Card";
 import styled from "styled-components";
 import { RiHomeHeartLine, RiPhoneLine } from "react-icons/ri";
 
 export default function ResourcesList({ item }) {
   const telefonnummer = "tel:" + item.tel;
   return (
-    <Container>
+    <Card>
       <Headline3>{item.name}</Headline3>
       <Link target="_blank" href={item.link}>
         <a>
@@ -22,7 +23,7 @@ export default function ResourcesList({ item }) {
           </LinkStyle>
         </a>
       </Link>
-    </Container>
+    </Card>
   );
 }
 
